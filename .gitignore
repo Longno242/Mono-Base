@@ -1,0 +1,7 @@
+build/
+bin/
+vendor/
+.vs/
+.vscode/ipch/
+*.user
+*.log

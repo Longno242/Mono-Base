@@ -1,0 +1,63 @@
+name: Bug report
+description: Something in Mono Base isn't working
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Make sure the game uses **Mono** (not IL2CPP / `GameAssembly.dll`).
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: What did you expect vs what actually happened?
+      placeholder: Menu doesn't show, resolver fails, crash on inject, etc.
+    validations:
+      required: true
+
+  - type: input
+    id: graphics_api
+    attributes:
+      label: Graphics API setting
+      description: Value of `config::kGraphicsApi` in config.hpp
+      placeholder: Auto, Dx11, Dx12, OpenGL, Vulkan
+    validations:
+      required: true
+
+  - type: input
+    id: game
+    attributes:
+      label: Game (optional)
+      description: Which game were you testing on?
+      placeholder: Game name + Unity version if you know it
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log output
+      description: Paste relevant lines from `MonoBase.log` or the debug console
+      render: text
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Build Release x64
+        2. Inject after main menu
+        3. Press DELETE
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: |
+        - OS: Windows 11
+        - Visual Studio version:
+        - Injector used:
+    validations:
+      required: true
